@@ -1,8 +1,17 @@
 {
-    "name": "ahxiaowu/wucomposer",
-    "description": "this is test composer project",
-    "type": "project",
-    "license": "MIT",
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "ahxiaowu/wucomposer",
+  "description": "this is test composer project",
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+      "files":[
+        "core/functions.php"
+      ],
+      "psr-4":{
+        "core\\":"core",
+        "web\\":"web"
+      }
+  }
 }
