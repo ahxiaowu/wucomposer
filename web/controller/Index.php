@@ -1,6 +1,7 @@
 <?php
 namespace web\controller;
 use core\View;
+use Gregwar\Captcha\CaptchaBuilder;
 
 class Index{
     private $view;
@@ -15,7 +16,19 @@ class Index{
     }
 
     public function post(){
-        echo 'post';
+        p($_SESSION);
+        return $this->view->make('post');
     }
+
+    public function code(){
+        header('Content-type: image/jpeg');
+        $builder = new CaptchaBuilder;
+        $builder->build();
+        $_SESSION['code'] = $builder->getPhrase();
+        $builder->output();
+    }
+
+
+
 }
 ?>
